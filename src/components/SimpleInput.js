@@ -1,15 +1,15 @@
-// import { useEffect } from 'react';
+import React from 'react';
 import useInput from '../hooks/use-input';
 
 const SimpleInput = (props) => {
 
-  const { 
-    value: enteredName, 
+  const {
+    value: enteredName,
     isValid: enteredNameIsValid,
-    hasError: nameInputHasError, 
-    valueChangeHandler: nameChangeHandler, 
+    hasError: nameInputHasError,
+    valueChangeHandler: nameChangeHandler,
     inputBlurHandler: nameBlurHandler,
-    reset: resetNameInput 
+    reset: resetNameInput
   } = useInput((value) => value.trim() !== '');
 
   const {
@@ -30,7 +30,7 @@ const SimpleInput = (props) => {
   const formSubmissionHandler = (event) => {
     event.preventDefault();
 
-    if (!enteredNameIsValid) {
+    if (!formIsValid) {
       return;
     }
 
